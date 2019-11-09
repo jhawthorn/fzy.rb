@@ -1,8 +1,6 @@
-# Fzy
+# fzy.rb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fzy`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby port of [fzy](https://github.com/jhawthorn/fzy)'s fuzzy finder scoring algorithm
 
 ## Installation
 
@@ -22,7 +20,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`Fzy.has_match?(needle, haystack)`
+
+``` ruby
+Fzy.has_match?("rb", "ruby")  # => true
+Fzy.has_match?("rb", "bar")   # => false
+```
+
+`Fzy.score(needle, haystack)`
+
+``` ruby
+Fzy.score("amuser", "app/models/user.rb")     # => 5.595
+Fzy.score("amuser", "app/models/customer.rb") # => 3.655
+```
+
+`Fzy.positions(needle, haystack)`
+
+``` ruby
+Fzy.positions("amuser", "app/models/user.rb")     # => [ 0, 4, 11, 12, 13, 14 ]
+Fzy.positions("amuser", "app/models/customer.rb") # => [ 0, 4, 12, 13, 17, 18 ]
+```
 
 ## Development
 
