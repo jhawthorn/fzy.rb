@@ -44,7 +44,7 @@ Init_fzy(void)
 {
   rb_mFzy = rb_define_module("Fzy");
 
-  rb_define_module_function(rb_mFzy, "has_match", rb_has_match, 2);
+  rb_define_module_function(rb_mFzy, "has_match?", rb_has_match, 2);
   rb_define_module_function(rb_mFzy, "score", rb_score, 2);
   rb_define_module_function(rb_mFzy, "positions", rb_positions, 2);
 }

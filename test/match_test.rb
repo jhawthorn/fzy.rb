@@ -3,12 +3,12 @@ require "test_helper"
 class MatchTest < Minitest::Test
   def assert_has_match(needle, haystack)
     msg = "Expected '#{needle}' to match '#{haystack}'"
-    assert Fzy.has_match(needle, haystack), msg
+    assert Fzy.has_match?(needle, haystack), msg
   end
 
   def refute_has_match(needle, haystack)
     msg = "Expected '#{needle}' not to match '#{haystack}'"
-    refute Fzy.has_match(needle, haystack), msg
+    refute Fzy.has_match?(needle, haystack), msg
   end
 
   def test_exact_match_should_return_true
